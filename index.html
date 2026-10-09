@@ -294,6 +294,14 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
         </div>
       </details>
       <details>
+        <summary>Até que preço posso entrar em uma operação?</summary>
+        <div class="answer">
+          <p>Você pode entrar com o prêmio até <strong>20% acima ou abaixo</strong> do preço de entrada postado no grupo. Os 20% acima são o <strong>limite máximo</strong>: não pague mais do que isso.</p>
+          <p><strong>Exemplo:</strong> se a entrada foi postada a R$ 1,00, a faixa vai de R$ 0,80 a R$ 1,20.</p>
+          <p>Use sempre uma <strong>ordem limitada</strong> com o preço dentro dessa faixa. Se, quando você chegar, o prêmio já estiver acima do limite, não corra atrás do preço: deixe a ordem no topo da faixa (no exemplo, R$ 1,20) ou fique de fora dessa operação.</p>
+        </div>
+      </details>
+      <details>
         <summary>Posso comprar e vender a mesma opção várias vezes no mesmo dia?</summary>
         <div class="answer">
           <p>Pode, não há limite. Mas, quando a compra e a venda acontecem no mesmo dia, a operação é um <strong>day trade</strong>, que tem regras de imposto diferentes (veja <a href="#imposto">Imposto de Renda</a>). Além disso, cada entrada e saída pode ter custo de corretagem e emolumentos.</p>
@@ -313,8 +321,8 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <ul class="checklist">
             <li>Tenha saldo disponível na conta Genial.</li>
             <li>As ordens só são executadas com o mercado aberto (pregão da B3, em dias úteis).</li>
-            <li>Anote do grupo três informações: ticker da opção, preço limite de entrada e quantidade.</li>
-            <li>Nunca pague acima do preço limite de entrada postado no grupo.</li>
+            <li>Anote do grupo três informações: ticker da opção, preço de entrada e quantidade.</li>
+            <li>Entre com preço até 20% acima ou abaixo do preço de entrada postado no grupo. Nunca pague mais de 20% acima: esse é o limite máximo.</li>
             <li>O preço mostrado é por opção. O valor total é preço × quantidade, e as opções são negociadas em lotes de 100.</li>
           </ul>
         </div>
@@ -434,16 +442,16 @@ const GUIDES = {
     { img: "bf-5", t: "Digite o ticker da sua opção", h: "<p>No campo <strong>Buscar ativo</strong>, digite o código da opção postada no grupo.</p><p class='note'>Digite sempre o ticker exato da <strong>sua</strong> operação. O da tela é só exemplo.</p>" },
     { img: "bf-6", t: "Selecione o ativo correto", h: "<p>A busca traz vários resultados parecidos. Toque <strong>somente</strong> no ticker exatamente igual ao da operação: um caractere diferente é outra opção, com outro strike.</p>" },
     { img: "bf-7", t: "Confira o ativo e toque em Escolher preço", h: "<ul><li>Confirme que o ticker no topo é o da sua operação.</li><li>Toque em <strong>Escolher preço</strong>. Evite a <strong>Ordem a mercado</strong>: em opções com pouca liquidez, ela pode executar num preço ruim.</li></ul>" },
-    { img: "bf-8", t: "Escolha o preço no livro de ofertas", h: "<ul><li><strong>Para comprar na hora:</strong> toque no menor preço da coluna <strong>Vendem</strong>.</li><li><strong>Para tentar pagar menos:</strong> escolha um preço da coluna <strong>Compram</strong>. A ordem fica na fila e só executa se alguém vender por esse valor.</li></ul><p>Se aparecer \"Mercado fechado\", aguarde o próximo pregão.</p>" },
+    { img: "bf-8", t: "Escolha o preço no livro de ofertas", h: "<ul><li><strong>Para comprar na hora:</strong> toque no menor preço da coluna <strong>Vendem</strong>.</li><li><strong>Para tentar pagar menos:</strong> escolha um preço da coluna <strong>Compram</strong>. A ordem fica na fila e só executa se alguém vender por esse valor.</li></ul><p>Em qualquer caso, o preço não pode passar de 20% acima do preço de entrada postado no grupo.</p><p>Se aparecer \"Mercado fechado\", aguarde o próximo pregão.</p>" },
     { img: "bf-9", t: "Defina preço e quantidade e envie", h: "<ul><li>Confira o <strong>preço</strong> e ajuste a <strong>quantidade</strong> (lotes de 100).</li><li>Confira o <strong>Valor total estimado</strong>.</li><li>Toque em <strong>COMPRAR</strong> e confirme com sua assinatura eletrônica.</li></ul><p><strong>Para vender:</strong> faça o mesmo caminho, informe quantidade e preço e toque em <strong>VENDER</strong>.</p>" }
   ],
   hb: [
     { img: "hb-2", t: "Baixe e abra o Genial HB", h: "<p>Busque <strong>Genial HB</strong> na App Store ou na Google Play, instale e entre com o login e a senha da sua conta Genial.</p>" },
-    { img: null, t: "Anote a operação do grupo", h: "<p>Antes de abrir a tela de compra, anote três informações da operação postada no grupo:</p><ul><li><strong>Ticker da opção:</strong> o código que você vai buscar no app.</li><li><strong>Preço limite de entrada:</strong> o máximo que você pode pagar.</li><li><strong>Quantidade:</strong> quantas opções comprar.</li></ul><p>Se tiver dúvida sobre algum deles, pergunte no grupo antes de enviar a ordem.</p>" },
+    { img: null, t: "Anote a operação do grupo", h: "<p>Antes de abrir a tela de compra, anote três informações da operação postada no grupo:</p><ul><li><strong>Ticker da opção:</strong> o código que você vai buscar no app.</li><li><strong>Preço de entrada:</strong> o preço postado. Você pode pagar até 20% acima dele, e esse é o limite máximo (exemplo: entrada a R$ 1,00, limite de R$ 1,20).</li><li><strong>Quantidade:</strong> quantas opções comprar.</li></ul><p>Se tiver dúvida sobre algum deles, pergunte no grupo antes de enviar a ordem.</p>" },
     { img: "hb-4", t: "Toque no + em Cotações", h: "<p>Na tela de <strong>Cotações</strong>, toque no <strong>+</strong>, no canto superior direito, para incluir a opção na sua lista.</p>" },
     { img: "hb-5", t: "Busque o ticker e adicione", h: "<ul><li>Digite o ticker postado no grupo.</li><li>Marque a caixa do código <strong>exatamente igual</strong> ao do grupo. A descrição ajuda: \"Opc Compra BBAS3 19/11/2026 22,54\" é uma call de BBAS3, vencimento em 19/11/2026, strike de R$ 22,54.</li><li>Toque em <strong>OK</strong>.</li></ul>" },
-    { img: "hb-6", t: "Abra o ativo e toque em Comprar/Vender", h: "<ul><li>Confira ticker, tipo, vencimento e strike na descrição.</li><li>Toque em <strong>Comprar/Vender</strong>.</li><li>Repare na <strong>Of. Venda</strong> (Ask): é o preço que você vai comparar com o limite do grupo.</li></ul>" },
-    { img: "hb-7", t: "Compare o Ask com o preço limite", h: "<p>Com a aba <strong>Compra</strong> selecionada, olhe o preço de <strong>Venda (Ask)</strong>, o menor preço que alguém aceita vender agora.</p><ul><li><strong>Ask igual ou menor que o limite:</strong> pode comprar.</li><li><strong>Ask maior que o limite:</strong> não compre. Aguarde o preço voltar ou a orientação do grupo.</li></ul>" },
+    { img: "hb-6", t: "Abra o ativo e toque em Comprar/Vender", h: "<ul><li>Confira ticker, tipo, vencimento e strike na descrição.</li><li>Toque em <strong>Comprar/Vender</strong>.</li><li>Repare na <strong>Of. Venda</strong> (Ask): é o preço que você vai comparar com o seu limite (preço de entrada + 20%).</li></ul>" },
+    { img: "hb-7", t: "Compare o Ask com o seu limite", h: "<p>Com a aba <strong>Compra</strong> selecionada, olhe o preço de <strong>Venda (Ask)</strong>, o menor preço que alguém aceita vender agora.</p><ul><li><strong>Ask até 20% acima do preço de entrada:</strong> pode comprar.</li><li><strong>Ask mais de 20% acima do preço de entrada:</strong> não compre. Deixe a ordem no limite ou fique de fora dessa operação.</li></ul>" },
     { img: "hb-8", t: "Preencha preço e quantidade e compre", h: "<ul><li>Em <strong>Preço</strong>, digite o valor do Ask ou um centavo abaixo. O app costuma preencher outro valor sozinho: apague e corrija.</li><li>Em <strong>Qtd</strong>, digite a quantidade e confira o <strong>Total</strong>.</li><li>Mantenha <strong>Tipo: Limitada</strong>, <strong>Iceberg: 0</strong>, <strong>Validade: Hoje</strong> e <strong>Lançamento Coberto</strong> desligado.</li><li>Toque em <strong>Comprar</strong> e confira na <strong>Lista de ordens</strong> se executou.</li></ul>" },
     { img: "hb-9", t: "Para vender: aba Venda", h: "<ul><li>Na mesma tela, toque na aba <strong>Venda</strong>.</li><li>Em <strong>Qtd</strong>, coloque quanto quer vender (no máximo o que você tem).</li><li>Em <strong>Preço</strong>, para vender na hora, use como referência a <strong>Compra (Bid)</strong>, o maior valor que alguém aceita pagar agora.</li><li>Toque em <strong>Vender</strong> e confira na <strong>Lista de ordens</strong>.</li></ul>" }
   ]
@@ -474,7 +482,7 @@ function renderStep() {
   if (s.img && IMG[s.img]) {
     box.innerHTML = `<img class="shot" alt="Tela do app: ${s.t}" src="${IMG[s.img]}">`;
   } else {
-    box.innerHTML = `<div class="shot placeholder"><span>Confira no grupo:<br><strong>ticker</strong>, <strong>preço limite</strong> e <strong>quantidade</strong></span></div>`;
+    box.innerHTML = `<div class="shot placeholder"><span>Confira no grupo:<br><strong>ticker</strong>, <strong>preço de entrada</strong> e <strong>quantidade</strong></span></div>`;
   }
   $("stepCount").textContent = `PASSO ${step + 1} DE ${list.length}`;
   $("stepTitle").textContent = s.t;
