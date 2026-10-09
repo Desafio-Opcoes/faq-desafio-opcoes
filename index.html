@@ -274,6 +274,18 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
         </div>
       </details>
       <details>
+        <summary>O que significam "Nova operação" e "Operação encerrada"?</summary>
+        <div class="answer">
+          <p>No Desafio, fazemos sempre a <strong>compra de call ou de put</strong>. Não fazemos <strong>lançamento de opções</strong>, que é vender uma call ou put para abrir uma posição vendida.</p>
+          <ul>
+            <li>🟢 <strong>Nova operação:</strong> é a abertura da operação, ou seja, a <strong>compra</strong> da opção informada.</li>
+            <li>🔴 <strong>Operação encerrada:</strong> é o fechamento da operação, ou seja, a <strong>venda</strong> da opção que foi comprada antes. O resultado pode ser positivo (lucro) ou negativo (prejuízo).</li>
+          </ul>
+          <p><strong>Por que não chamamos o encerramento de "venda de call"?</strong> Existe, sim, uma venda nesse momento, mas ela serve para fechar a compra anterior, não para abrir uma posição vendida. Por isso usamos "operação encerrada": fica clara a finalidade do aviso.</p>
+          <p>🔄 Se a operação for encerrada com <strong>lucro</strong>, pelas regras do Desafio, o trader pode abrir uma nova operação no lugar da que foi encerrada.</p>
+        </div>
+      </details>
+      <details>
         <summary>Preciso ter a ação para negociar a opção dela?</summary>
         <div class="answer">
           <p>Não. Para <strong>comprar</strong> uma call ou uma put, você só precisa ter saldo para pagar o prêmio. Não é preciso ter a ação na carteira.</p>
