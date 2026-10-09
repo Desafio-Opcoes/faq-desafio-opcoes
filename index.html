@@ -396,7 +396,27 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
       <details>
         <summary>Posso comprar e vender a mesma opção várias vezes no mesmo dia?</summary>
         <div class="answer">
-          <p>Pode, não há limite. Mas, quando a compra e a venda acontecem no mesmo dia, a operação é um <strong>day trade</strong>, que tem regras de imposto diferentes (veja <a href="#imposto">Imposto de Renda</a>). Além disso, cada entrada e saída pode ter custo de corretagem e emolumentos.</p>
+          <p>Pode, não há limite. Mas, quando a compra e a venda acontecem no mesmo dia, a operação é um <strong>day trade</strong>, que tem regras de imposto diferentes (veja <a href="#imposto">Imposto de Renda</a>). Além disso, cada entrada e saída tem custo de corretagem e emolumentos (veja <a href="#custos">quanto custa operar</a>).</p>
+        </div>
+      </details>
+      <details id="custos">
+        <summary>Quanto custa comprar e vender opções na Genial?</summary>
+        <div class="answer">
+          <p>A cada ordem executada, há uma <strong>corretagem</strong>. Para opções, o valor depende de o <strong>RLP</strong> estar ativo na sua conta:</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Opções (por ordem)</th><th>Sem RLP</th><th>Com RLP</th></tr></thead>
+              <tbody>
+                <tr><td>Compra ou venda</td><td>R$ 2,49</td><td>R$ 0,99</td></tr>
+                <tr><td>Exercício da opção</td><td colspan="2">0,50% + R$ 25,21 (mínimo de R$ 40,00)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Sobre a corretagem incidem <strong>9,65% de impostos</strong> (ISS/PIS/COFINS), e a B3 cobra os <strong>emolumentos</strong>, que variam conforme o valor negociado. Não há taxa de custódia.</p>
+          <p><strong>Exemplo:</strong> numa operação completa (uma compra e uma venda), a corretagem com RLP fica em cerca de R$ 2,17 já com impostos. Sem RLP, cerca de R$ 5,46. Os emolumentos são somados a isso.</p>
+          <p><strong>O que é RLP?</strong> É um programa da B3 em que a corretora pode ser a contraparte da sua ordem. Com ele ativo, a corretagem de opções cai de R$ 2,49 para R$ 0,99 por ordem.</p>
+          <p><strong>Atenção ao exercício:</strong> se a opção for exercida no vencimento, o custo é bem maior (mínimo de R$ 40,00). Esse é mais um motivo para vender antes do vencimento.</p>
+          <p>Veja a tabela completa em <a href="https://gtfcapital.com.br/tabela-de-precos-e-servicos/" target="_blank" rel="noopener">Tabela de preços e serviços</a>.</p>
         </div>
       </details>
     </div>
