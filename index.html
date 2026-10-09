@@ -135,6 +135,10 @@ td:first-child { font-weight: 600; }
 .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
 .btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
 .hint { font-size: 0.875rem; color: var(--muted); }
+/* Referral */
+.refer { background: var(--surface); border: 1px solid var(--accent); border-radius: 16px; padding: 22px; display: grid; gap: 12px; }
+.refer p { margin: 0; }
+.refer .big { font-size: 1.1rem; font-weight: 600; color: var(--accent); }
 /* Contacts */
 .contacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .contact { display: grid; gap: 2px; text-decoration: none; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
@@ -176,6 +180,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
       <a href="#imposto">Imposto de Renda</a>
       <a href="#mercado">Mercado</a>
       <a href="#duvida">Enviar dúvida</a>
+      <a href="#indique">Indique e ganhe</a>
       <a href="#contato">Contato</a>
     </nav>
     <p class="result-note" id="resultNote" hidden></p>
@@ -437,6 +442,16 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
         <a class="btn" id="send" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar dúvida</a>
         <span class="hint" id="sendHint">Ao clicar, o formulário abre com sua dúvida já preenchida. Confirme o envio por lá.</span>
       </div>
+    </div>
+  </section>
+
+  <section id="indique">
+    <h2>🤝 Indique e ganhe!</h2>
+    <div class="refer">
+      <p>Queremos contar com vocês para nos ajudar a crescer ainda mais! 🚀</p>
+      <p>Você pode indicar até <strong>2 clientes</strong> e, para <strong>cada indicação que fechar</strong>, você ganha <strong>+6 meses de extensão na sua assinatura</strong>. 🔥</p>
+      <p class="big">Ou seja: 2 indicações fechadas = +12 meses com a gente!</p>
+      <div><a class="btn" href="https://forms.gle/GTkSwXvi3fztQZbb6" target="_blank" rel="noopener">👉 Indique aqui</a></div>
     </div>
   </section>
 
