@@ -55,6 +55,14 @@ header { display: grid; gap: 14px; }
 .updated { font-size: 0.85rem; color: var(--muted); }
 
 .searchbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 14px 10px; margin-top: 18px; display: grid; gap: 10px; }
+.searchrow { display: flex; gap: 8px; align-items: stretch; min-width: 0; }
+.searchrow .search input { width: 100%; }
+.searchrow .search { flex: 1; min-width: 0; }
+.platform-btn { flex: none; display: flex; align-items: center; gap: 6px; text-decoration: none; background: var(--accent); color: var(--surface); font-weight: 600; font-size: 0.9rem; padding: 0 14px; border-radius: 12px; white-space: nowrap; }
+.platform-btn:hover { filter: brightness(1.08); }
+.platform-btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.platform-btn .short { display: none; }
+@media (max-width: 520px) { .platform-btn .long { display: none; } .platform-btn .short { display: inline; } .platform-btn { padding: 0 12px; } }
 .search { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0 14px; }
 .search:focus-within { border-color: var(--accent); }
 .search svg { flex: none; color: var(--muted); }
@@ -186,10 +194,13 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
   </nav>
 
   <div class="searchbar">
+    <div class="searchrow">
     <label class="search" for="q">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input id="q" type="search" placeholder="Busque por strike, vencimento, imposto…" autocomplete="off">
     </label>
+    <a class="platform-btn" href="https://app.tradingfloors.com.br/" target="_blank" rel="noopener" aria-label="Abrir Operações em aberto"><span aria-hidden="true">📊</span><span class="long">Operações em aberto</span><span class="short">Operações</span> <span aria-hidden="true">↗</span></a>
+    </div>
     <nav class="chips" aria-label="Seções">
       <a href="#conceitos">Conceitos</a>
       <a href="#pratica">Na prática</a>
@@ -690,6 +701,9 @@ let DIRECT_FAILED = false;
   }
   window.addEventListener('hashchange', openFromHash);
   openFromHash();
+
+  // Placeholder curto no celular, para caber ao lado do botão
+  if (window.matchMedia('(max-width: 520px)').matches) document.getElementById('q').placeholder = 'Buscar dúvida…';
 </script>
 
 </body>
