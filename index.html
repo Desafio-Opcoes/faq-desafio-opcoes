@@ -62,6 +62,10 @@ body { background: var(--bg); color: var(--fg); font-family: var(--font-body); f
 .menu-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .scrim { position: fixed; inset: 0; background: rgb(10 20 16 / .45); z-index: 30; }
 .sec-head { display: grid; gap: 4px; }
+.st { display: flex; align-items: flex-start; gap: 12px; }
+.stepno { flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin-top: -1px; border-radius: 50%; background: var(--accent); color: var(--surface); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; }
+.steps .answer { padding-left: 42px; }
+@media (max-width: 520px) { .steps .answer { padding-left: 2px; } }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
 h1 { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; }
 h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
@@ -257,6 +261,98 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
     <p class="result-note" id="resultNote" hidden></p>
   </div>
 
+  <section id="comece" data-section>
+    <div class="sec-head">
+      <h2>Primeiros passos</h2>
+      <p class="section-intro">Acabou de entrar ou nunca operou opções? Comece por aqui, nesta ordem.</p>
+    </div>
+    <div class="qa steps">
+      <details id="conta">
+        <summary><span class="st"><span class="stepno" aria-hidden="true">1</span><span>Abra sua conta na Genial ou troque de assessoria</span></span></summary>
+        <div class="answer">
+          <p>As operações do Desafio são feitas na Genial Investimentos.</p>
+          <p><strong>Ainda não tem conta na Genial?</strong> Siga esta ordem:</p>
+          <ol>
+            <li>Comece o cadastro por <a href="https://app.genialinvestimentos.com.br/abrir-conta?id=13209" target="_blank" rel="noopener">este link</a>.</li>
+            <li>Baixe o aplicativo <strong>Genial Investimentos</strong>.</li>
+            <li>Continue e finalize a abertura de conta pelo aplicativo.</li>
+            <li>Depois de concluir, envie seu CPF para um dos <a href="#contato">monitores</a>.</li>
+          </ol>
+          <p class="note"><strong>Atenção:</strong> seguir essa ordem é o que deixa sua conta vinculada à nossa assessoria.</p>
+          <p><strong>Já tem conta na Genial?</strong> Faça a troca de assessoria pelo aplicativo:</p>
+          <ol>
+            <li>Toque nas três linhas, no canto superior direito.</li>
+            <li>Toque nas iniciais do seu nome e entre em <strong>Assessoria</strong>.</li>
+            <li>Toque em <strong>Trocar de assessoria</strong> e depois em <strong>Parceiros</strong>.</li>
+            <li>Na lupa, busque por <strong>GTF Opções</strong> e confirme a troca.</li>
+          </ol>
+          <p>A troca leva até <strong>72 horas</strong>.</p>
+        </div>
+      </details>
+      <details id="plataforma">
+        <summary><span class="st"><span class="stepno" aria-hidden="true">2</span><span>Acesse a plataforma de operações</span></span></summary>
+        <div class="answer">
+          <p>É no site <a href="https://app.tradingfloors.com.br/" target="_blank" rel="noopener">app.tradingfloors.com.br</a> que você acompanha todas as operações dos traders. Não há aplicativo para baixar: abra o site no navegador, no computador ou no celular.</p>
+          <ol>
+            <li>Entre com o <strong>e-mail que você usou na compra</strong>.</li>
+            <li>No primeiro acesso, use a senha <strong class="mono">Thelink@2026</strong>. Depois, entre com a senha que você cadastrou.</li>
+            <li>Selecione <strong>Desafio Eleições</strong> e depois <strong>Em aberto</strong> para ver as operações em andamento e quanto cada opção está variando em relação ao preço de entrada.</li>
+            <li>Na aba <strong>Encerradas</strong>, você consulta o histórico das operações finalizadas.</li>
+          </ol>
+          <p>Entenda <a href="#nova-encerrada">o que significam os avisos "Nova operação" e "Operação encerrada"</a>. Não conseguiu acessar? <a href="#contato">Fale com os monitores</a>.</p>
+        </div>
+      </details>
+      <details>
+        <summary><span class="st"><span class="stepno" aria-hidden="true">3</span><span>Entre nos grupos de WhatsApp</span></span></summary>
+        <div class="answer">
+          <ul>
+            <li><strong>Grupo de operações:</strong> onde os traders avisam cada entrada e cada saída.</li>
+            <li><strong>Grupo de notícias:</strong> notícias, análises e comunicados importantes.</li>
+          </ul>
+          <p>Ainda não está nos grupos? Peça o link a um dos <a href="#contato">monitores</a>.</p>
+        </div>
+      </details>
+      <details id="aulas">
+        <summary><span class="st"><span class="stepno" aria-hidden="true">4</span><span>Assista às aulas</span></span></summary>
+        <div class="answer">
+          <p>Na <a href="https://edu.thelinkbr.com/248213-desafio-opcoes" target="_blank" rel="noopener">plataforma educacional</a> ficam as aulas, as gravações e os materiais de apoio do Desafio. Entre com o <strong>e-mail da compra</strong> e, no primeiro acesso, com a senha <strong class="mono">Thelink@2026</strong>.</p>
+          <p>Se você não participou das aulas ao vivo, comece pelas gravações:</p>
+          <ul>
+            <li><a href="https://edu.thelinkbr.com/248213-desafio-opcoes/5643483-2026-09-10-aulao-de-boas-vindas" target="_blank" rel="noopener">Aulão de boas-vindas com Sérgio Sanita</a></li>
+            <li><a href="https://edu.thelinkbr.com/248213-desafio-opcoes/5698871-2026-10-06-aulao-de-boas-vindas-desafio-de-opcoes" target="_blank" rel="noopener">Aulão de boas-vindas de 06/10</a></li>
+          </ul>
+        </div>
+      </details>
+      <details id="sala-ao-vivo">
+        <summary><span class="st"><span class="stepno" aria-hidden="true">5</span><span>Sala ao vivo do Trading Floor (se você recebeu de bônus)</span></span></summary>
+        <div class="answer">
+          <p>Quem recebeu o Trading Floor como bônus acompanha a equipe de especialistas ao vivo, com análises de mercado e operações de índice, dólar, ações e outros ativos.</p>
+          <p><strong>Horário:</strong> de segunda a sexta, das 8h às 17h, em dias de pregão. A sala começa às 8h com Sérgio Sanita, na análise de abertura do mercado.</p>
+          <p><strong>Como entrar:</strong> pelo e-mail "Lembrete: Trading Floor - Sala ao Vivo inicia em 1 hora", ou na página inicial de <a href="https://app.tradingfloors.com.br/" target="_blank" rel="noopener">app.tradingfloors.com.br</a>, no botão verde <strong>Entrar no Zoom</strong>.</p>
+        </div>
+      </details>
+      <details id="primeira-operacao">
+        <summary><span class="st"><span class="stepno" aria-hidden="true">6</span><span>Faça sua primeira operação</span></span></summary>
+        <div class="answer">
+          <p>No Desafio, você só <strong>compra</strong> calls e puts, seguindo as operações que os traders postam no grupo. Antes da primeira ordem:</p>
+          <ul class="checklist">
+            <li>Defina <a href="#quanto-colocar">quanto colocar em cada operação</a>.</li>
+            <li>Confira o <a href="#horarios">horário do pregão</a>: a ordem só executa com o mercado aberto.</li>
+            <li>Anote do grupo o ticker da opção, o preço de entrada e a quantidade.</li>
+            <li>Respeite a <a href="#faixa">faixa de 20%</a> sobre o preço de entrada e use ordem limitada.</li>
+            <li>Siga o <a href="#passo-a-passo">passo a passo no app</a> para comprar e, depois, para vender.</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary><span class="st"><span class="stepno" aria-hidden="true">7</span><span>Conte com os monitores</span></span></summary>
+        <div class="answer">
+          <p>Nunca operou opções? Não se preocupe: os monitores ajudam você em todo o processo, da abertura de conta à primeira operação. <a href="#contato">Veja como falar com eles</a>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
   <section id="desafio" data-section>
     <div class="sec-head">
       <h2>Como funciona o Desafio</h2>
@@ -317,7 +413,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p>Assim você tem muito tiro para dar, mesmo numa sequência ruim. E nunca coloque numa opção um dinheiro que você não pode perder.</p>
         </div>
       </details>
-      <details>
+      <details id="nova-encerrada">
         <summary>O que significam "Nova operação" e "Operação encerrada"?</summary>
         <div class="answer">
           <p>No Desafio, fazemos sempre a <strong>compra de call ou de put</strong>. Não fazemos <strong>lançamento de opções</strong>, que é vender uma call ou put para abrir uma posição vendida.</p>
@@ -327,17 +423,6 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           </ul>
           <p><strong>Por que não chamamos o encerramento de "venda de call"?</strong> Existe, sim, uma venda nesse momento, mas ela serve para fechar a compra anterior, não para abrir uma posição vendida. Por isso usamos "operação encerrada": fica clara a finalidade do aviso.</p>
           <p>🔄 Se a operação for encerrada com <strong>lucro</strong>, pelas regras do Desafio, o trader pode abrir uma nova operação no lugar da que foi encerrada.</p>
-        </div>
-      </details>
-      <details id="plataforma">
-        <summary>Como acesso a plataforma de Operações em aberto?</summary>
-        <div class="answer">
-          <ol>
-            <li>Acesse <a href="https://app.tradingfloors.com.br/" target="_blank" rel="noopener">app.tradingfloors.com.br</a>.</li>
-            <li>Entre com o <strong>e-mail que você usou na compra</strong>.</li>
-            <li>No primeiro acesso, use a senha <strong class="mono">Thelink@2026</strong>. Depois disso, entre com a senha que você cadastrou.</li>
-          </ol>
-          <p>Em <strong>Operações em aberto</strong>, você acompanha quanto cada opção está variando em relação ao preço de entrada. Não conseguiu acessar? <a href="#contato">Fale com os monitores</a>.</p>
         </div>
       </details>
       <details>
@@ -498,7 +583,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p class="note"><strong>Atenção:</strong> se levar a opção até o vencimento, a história muda. Veja <a href="#vencimento">o que acontece no vencimento</a>.</p>
         </div>
       </details>
-      <details>
+      <details id="faixa">
         <summary>Até que preço posso entrar em uma operação?</summary>
         <div class="answer">
           <p>Você pode entrar com o prêmio até <strong>20% acima ou abaixo</strong> do preço de entrada postado no grupo. Os 20% acima são o <strong>limite máximo</strong>: não pague mais do que isso.</p>
@@ -798,7 +883,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
 
   <section id="contato">
     <h2>Fale com a gente</h2>
-    <p class="section-intro">Ficou com alguma dúvida sobre as operações? Chame um dos monitores no WhatsApp.</p>
+    <p class="section-intro">Os monitores ajudam com abertura de conta e troca de assessoria, acesso às plataformas, como montar as operações e qualquer dúvida operacional do Desafio. Chame um deles no WhatsApp.</p>
     <div class="contacts">
       <a class="contact" href="https://wa.me/5581998797990" target="_blank" rel="noopener"><span class="role">Monitor</span><span class="name">Arthur Godoy</span><span class="tel">(81) 99879-7990</span></a>
       <a class="contact" href="https://wa.me/5519996668231" target="_blank" rel="noopener"><span class="role">Monitor</span><span class="name">Pedro Cultrera</span><span class="tel">(19) 99666-8231</span></a>
@@ -989,8 +1074,8 @@ let DIRECT_FAILED = false;
       const a = document.createElement('a');
       a.href = '#' + sec.id; a.dataset.target = sec.id;
       const n = sec.querySelectorAll('details').length;
-      const isGuide = sec.id === 'passo-a-passo';
-      a.innerHTML = `<span>${sec.querySelector('h2').textContent}</span><span class="n">${isGuide ? 'guia' : n}</span>`;
+      const isGuide = sec.id === 'passo-a-passo' || sec.id === 'comece';
+      a.innerHTML = `<span>${sec.querySelector('h2').textContent}</span><span class="n">${sec.id === 'comece' ? n + ' passos' : isGuide ? 'guia' : n}</span>`;
       list.appendChild(a);
     });
     const links = [...side.querySelectorAll('a[data-target]')];
