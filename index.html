@@ -184,7 +184,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
     <span class="eyebrow">Desafio de Opções</span>
     <h1>Perguntas frequentes</h1>
     <p class="lead">As dúvidas mais enviadas por quem está participando do Desafio, respondidas para quem está começando agora. Não achou a sua? Envie no fim da página: este material é atualizado com as novas perguntas.</p>
-    <p class="updated">Atualizado em 09/10/2026</p>
+    <p class="updated">Atualizado em 13/10/2026</p>
   </header>
 
   <nav class="quick" aria-label="Acesso rápido">
@@ -225,6 +225,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
             <li><strong>Call (opção de compra):</strong> dá o direito de comprar a ação. Ganha valor quando a ação <strong>sobe</strong>.</li>
             <li><strong>Put (opção de venda):</strong> dá o direito de vender a ação. Ganha valor quando a ação <strong>cai</strong>.</li>
           </ul>
+          <p>Quem compra a opção e fica com o direito é o <strong>titular</strong> (é você, no Desafio). Quem vende a opção e assume a obrigação é o <strong>lançador</strong>, o que não fazemos no Desafio. A ação sobre a qual a opção é negociada se chama <strong>ativo-objeto</strong>.</p>
         </div>
       </details>
       <details>
@@ -243,13 +244,45 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
             <li><strong>No dinheiro (ATM):</strong> o strike está próximo do preço atual.</li>
             <li><strong>Fora do dinheiro (OTM):</strong> o strike ainda está distante. O prêmio é mais barato, mas a ação precisa andar mais para a opção ganhar valor.</li>
           </ul>
+          <p>Na <strong>put</strong> é ao contrário: ela está dentro do dinheiro quando a ação está <strong>abaixo</strong> do strike. E quando um trader fala em "call 5% OTM", quer dizer que o strike está 5% acima do preço atual da ação.</p>
           <p>No Desafio, o strike já vem indicado em cada operação. Ao montar a ordem, confira se o código da opção corresponde ao strike e ao vencimento informados.</p>
         </div>
       </details>
       <details>
         <summary>O que é o vencimento?</summary>
         <div class="answer">
-          <p>É a data em que a opção deixa de existir. As opções mensais de ações vencem na <strong>terceira sexta-feira do mês</strong>, e também existem opções semanais. Quanto mais perto do vencimento, mais rápido o prêmio perde valor se a ação não se mover a favor.</p>
+          <p>É a data em que a opção deixa de existir. As opções mensais de ações vencem na <strong>terceira sexta-feira do mês</strong>. Se esse dia for feriado, o vencimento passa para o dia útil anterior: em novembro de 2026, por causa do feriado de 20/11, as opções vencem em <strong>19/11/2026</strong> (quinta-feira).</p>
+          <p>Também existem opções <strong>semanais</strong>, que vencem em poucos dias e têm um sufixo no código, como <span class="mono">W1</span>, <span class="mono">W2</span>… Antes de comprar, confira sempre a data de vencimento na plataforma.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Por que a opção perde valor mesmo com a ação parada?</summary>
+        <div class="answer">
+          <p>Porque o preço da opção tem duas partes:</p>
+          <ul>
+            <li><strong>Valor intrínseco:</strong> o que ela já vale hoje. Numa call, é a diferença entre o preço da ação e o strike.</li>
+            <li><strong>Valor extrínseco:</strong> o valor do tempo e da expectativa de movimento. Ele <strong>derrete até zero</strong> no vencimento.</li>
+          </ul>
+          <p class="example"><strong>Exemplo:</strong> ação a R$ 45, call com strike de R$ 42 e prêmio de R$ 3,80. O intrínseco é R$ 3,00 (45 − 42) e os R$ 0,80 restantes são extrínseco, que vão sumindo com o passar dos dias.</p>
+          <p>Esse derretimento acontece todo dia, mesmo com a ação parada, e <strong>acelera nas últimas semanas</strong> antes do vencimento. Por isso, quem compra opção precisa acertar três coisas: a <strong>direção</strong>, o <strong>tamanho do movimento</strong> e o <strong>prazo</strong>.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Posso perder dinheiro mesmo acertando a direção da ação?</summary>
+        <div class="answer">
+          <p>Pode. Para ter lucro no vencimento, a ação precisa passar do <strong>strike + prêmio pago</strong>, não só do strike.</p>
+          <p class="example"><strong>Exemplo fictício:</strong> ação a R$ 40. Você investe R$ 2.000 em 2.500 calls com strike de R$ 42, pagando R$ 0,80 cada. Para empatar no vencimento, a ação precisa chegar a R$ 42,80.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Ação no vencimento</th><th>Opção vale</th><th>Total</th><th>Resultado</th></tr></thead>
+              <tbody>
+                <tr><td>Sobe forte: R$ 46</td><td>R$ 4,00</td><td>R$ 10.000</td><td>+400%</td></tr>
+                <tr><td>Sobe pouco: R$ 42,50</td><td>R$ 0,50</td><td>R$ 1.250</td><td>−37,5%</td></tr>
+                <tr><td>Parada ou cai: R$ 40</td><td>Zero</td><td>R$ 0</td><td>−100%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>No segundo caso, a ação subiu e mesmo assim a operação deu prejuízo. Valores no vencimento, sem custos e impostos.</p>
         </div>
       </details>
       <details>
@@ -273,11 +306,12 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
                 <tr><td>O que você compra</td><td>Uma parte da empresa</td><td>O direito de comprar ou vender a ação</td></tr>
                 <tr><td>Quanto investe</td><td>O preço cheio da ação</td><td>Só o prêmio, bem menor</td></tr>
                 <tr><td>Prazo</td><td>Sem prazo</td><td>Tem vencimento</td></tr>
-                <tr><td>Perda máxima</td><td>O valor investido, se a ação for a zero</td><td>O prêmio pago</td></tr>
-                <tr><td>Variação</td><td>Acompanha a ação</td><td>Varia percentualmente muito mais que a ação</td></tr>
+                <tr><td>Perda máxima</td><td>O valor investido (é raro perder tudo)</td><td>O prêmio pago, e perder 100% é comum</td></tr>
+                <tr><td>Alavancagem</td><td>Nenhuma: acompanha a ação</td><td>Alta: amplia ganhos e perdas</td></tr>
               </tbody>
             </table>
           </div>
+          <p>A mesma força que multiplica o ganho <strong>acelera a perda</strong>.</p>
         </div>
       </details>
       <details>
@@ -285,6 +319,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
         <div class="answer">
           <p>As opções têm <strong>alavancagem</strong>: uma alta de 5% na ação pode fazer o prêmio subir 30%, 50% ou mais. Mas isso vale para os dois lados. Uma pequena queda, ou a ação simplesmente parada, pode fazer a opção perder boa parte do valor, e muitas opções vencem valendo zero.</p>
           <p>Ou seja: o <strong>potencial</strong> de ganho percentual é maior, mas a <strong>chance</strong> de acerto não é. Por isso, só invista em opções um valor que você aceita perder por inteiro. Para quem compra, o risco é conhecido desde o início: a perda máxima é o prêmio pago.</p>
+          <p>Lembre também que uma ação pode desabar num único pregão. A PETR4 caiu 14,6% em 28/05/2018, com o corte no diesel durante a greve dos caminhoneiros; a VALE3 caiu 24,5% em 28/01/2019, após o rompimento da barragem de Brumadinho; e a AMER3 caiu 77,3% em 12/01/2023, depois do rombo contábil. Quem tivesse uma call desses papéis na véspera veria a opção virar pó.</p>
         </div>
       </details>
     </div>
@@ -293,11 +328,25 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
   <section id="pratica" data-section>
     <h2>Operando na prática</h2>
     <div class="qa">
-      <details>
+      <details id="horarios">
         <summary>Em que dias e horários posso comprar e vender opções?</summary>
         <div class="answer">
-          <p>Só com o mercado aberto: de <strong>segunda a sexta, das 10h às 17h</strong>, somente em <strong>dias úteis</strong>. Em fins de semana e feriados não há negociação.</p>
-          <p>Fora desse horário, a ordem não é executada. Por isso, quando uma operação for postada no grupo, confira se o mercado está aberto antes de enviar a ordem.</p>
+          <p>Só com o mercado aberto, de <strong>segunda a sexta</strong>, somente em <strong>dias úteis</strong>. Em fins de semana e feriados não há negociação.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Período</th><th>Pregão</th></tr></thead>
+              <tbody>
+                <tr><td>Até o fim de outubro</td><td>10h às 16h55</td></tr>
+                <tr><td>A partir de novembro</td><td>10h às 17h55</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>A B3 estende o pregão em uma hora quando acaba o horário de verão nos EUA, em 1º de novembro. São os horários do mercado de ações; a grade de opções segue o comunicado da B3.</p>
+          <ul>
+            <li>Ordem enviada fora do pregão só é executada quando o mercado abrir.</li>
+            <li>Nos primeiros minutos do pregão, o spread costuma estar mais aberto: cuidado com ordens logo na abertura.</li>
+          </ul>
+          <p>Por isso, quando uma operação for postada no grupo, confira se o mercado está aberto antes de enviar a ordem.</p>
         </div>
       </details>
       <details>
@@ -312,17 +361,65 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p>🔄 Se a operação for encerrada com <strong>lucro</strong>, pelas regras do Desafio, o trader pode abrir uma nova operação no lugar da que foi encerrada.</p>
         </div>
       </details>
+      <details id="como-funciona">
+        <summary>O Desafio é copy trade?</summary>
+        <div class="answer">
+          <p>Não. Cada trader monta a operação e avisa no grupo, mas <strong>quem executa na corretora é você</strong>. Seguir ou não cada operação fica a seu critério, e nossa recomendação é seguir todas.</p>
+          <p>As operações são <strong>reais e feitas ao vivo</strong>: as mesmas que os traders montam, com strike e momento de entrada definidos pelo método de cada um. Você acompanha as operações abertas, as encerradas e o resultado em tempo real em <a href="https://app.tradingfloors.com.br/" target="_blank" rel="noopener"><strong>Operações em aberto</strong></a>.</p>
+        </div>
+      </details>
+      <details id="regras">
+        <summary>Quais são as regras que os traders seguem no Desafio?</summary>
+        <div class="answer">
+          <ul>
+            <li>Só <strong>compra a seco</strong> de call ou put.</li>
+            <li>Proibido: travas, borboletas, straddles e venda de opções.</li>
+            <li>Até <strong>R$ 2.000 de prêmio</strong> por operação.</li>
+            <li>Mínimo de <strong>1 operação nova por semana, por trader</strong>.</li>
+            <li>A posição pode ser carregada por mais de uma semana, dentro do vencimento.</li>
+            <li>Sem stop obrigatório: a saída é decisão do trader ou acontece no vencimento.</li>
+          </ul>
+          <p><strong>Segunda operação na semana:</strong> depois de abrir a primeira, o trader só pode abrir a segunda na mesma semana se tiver encerrado 100% da primeira <strong>com lucro</strong>. Se não, a próxima fica para a semana seguinte.</p>
+        </div>
+      </details>
       <details id="todas-as-operacoes">
         <summary>Devo entrar em todas as operações?</summary>
         <div class="answer">
           <p>Sim. A ideia é que você siga <strong>todas as recomendações</strong> do Desafio. O resultado vem do conjunto das operações: quem escolhe só algumas pode ficar de fora justamente das que dão lucro.</p>
-          <p>Para conseguir entrar em todas sem ficar sem saldo no meio do caminho, organize o capital: separe o valor que você destinou ao Desafio e <strong>divida pela duração que você escolheu</strong>. Assim, você tem saldo reservado para entrar em todas as operações até o fim.</p>
+          <p>São três traders, cada um com uma leitura de mercado diferente:</p>
+          <ul>
+            <li><strong>Sérgio Sanita:</strong> análise gráfica.</li>
+            <li><strong>Artur Horta:</strong> notícias e fundamentos.</li>
+            <li><strong>Rafael Ferri:</strong> fundamentos e macroeconomia.</li>
+          </ul>
+          <p>Seguindo os três, você diversifica o raciocínio, não só o ativo, depende menos do acerto de um trader só e evita o viés de seguir apenas quem acertou o último trade.</p>
+          <p>Para conseguir entrar em todas sem ficar sem saldo no meio do caminho, organize o capital: separe o valor que você destinou ao Desafio e <strong>divida pela duração que você escolheu</strong>. Assim, você tem saldo reservado para entrar em todas as operações até o fim. Veja também <a href="#quanto-colocar">quanto colocar em cada operação</a>.</p>
+        </div>
+      </details>
+      <details id="quanto-colocar">
+        <summary>Quanto devo colocar em cada operação?</summary>
+        <div class="answer">
+          <p>Os <strong>R$ 2.000</strong> por operação são o <strong>teto</strong> dos traders, não uma meta. Uma opção pode perder 100% do valor, e uma sequência ruim acontece: quem perde R$ 2.000 dez vezes seguidas perde R$ 20 mil.</p>
+          <p>Adapte o tamanho de cada operação ao seu patrimônio. A sugestão é usar de <strong>0,5% a 1% da sua carteira por operação</strong>:</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Sua carteira</th><th>Por operação</th></tr></thead>
+              <tbody>
+                <tr><td>R$ 50 mil</td><td>R$ 250 a R$ 500</td></tr>
+                <tr><td>R$ 100 mil</td><td>R$ 500 a R$ 1.000</td></tr>
+                <tr><td>R$ 200 mil</td><td>R$ 1.000 a R$ 2.000</td></tr>
+                <tr><td>Acima disso</td><td>Até R$ 2.000 (teto)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Assim você tem muito tiro para dar, mesmo numa sequência ruim. E nunca coloque numa opção um dinheiro que você não pode perder.</p>
         </div>
       </details>
       <details>
         <summary>Preciso ter a ação para negociar a opção dela?</summary>
         <div class="answer">
-          <p>Não. Para <strong>comprar</strong> uma call ou uma put, você só precisa ter saldo para pagar o prêmio. Não é preciso ter a ação na carteira.</p>
+          <p>Não. Para <strong>comprar</strong> uma call ou uma put, você só precisa ter saldo para pagar o prêmio. Não é preciso ter a ação na carteira: você negocia o direito, não a ação.</p>
+          <p class="note"><strong>Atenção:</strong> se levar a opção até o vencimento, a história muda. Veja <a href="#vencimento">o que acontece no vencimento</a>.</p>
         </div>
       </details>
       <details>
@@ -332,14 +429,16 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p>Para encerrar a operação, basta enviar uma <strong>ordem de venda</strong> da mesma opção (mesmo código), na mesma quantidade que você comprou. O passo a passo está na seção <a href="#passo-a-passo">Passo a passo no app</a>.</p>
         </div>
       </details>
-      <details>
+      <details id="vencimento">
         <summary>O que acontece se eu levar a opção até o vencimento?</summary>
         <div class="answer">
           <ul>
             <li><strong>Se ela estiver fora do dinheiro:</strong> vence valendo zero, e você perde o prêmio pago.</li>
-            <li><strong>Se ela estiver dentro do dinheiro:</strong> pode ser <strong>exercida automaticamente</strong> pela bolsa. Numa call, isso significa que você vai comprar as ações pelo strike, e precisa ter saldo para isso.</li>
+            <li><strong>Call dentro do dinheiro:</strong> pode ser <strong>exercida</strong>, e aí você <strong>compra as ações</strong> pelo strike. O valor a pagar é strike × quantidade.</li>
+            <li><strong>Put dentro do dinheiro:</strong> pode ser exercida, e aí você <strong>vende as ações</strong> pelo strike. Se não tiver as ações, fica vendido a descoberto.</li>
           </ul>
-          <p>Se você não quer receber as ações, venda a opção antes do vencimento.</p>
+          <p class="note"><strong>Exemplo:</strong> 2.500 calls com strike de R$ 42 exercidas significam <strong>R$ 105.000</strong> a pagar pelas ações.</p>
+          <p><strong>Regra prática: encerre a posição antes do vencimento.</strong> Além de evitar o exercício, você foge do custo de exercício, que é bem maior que o de uma venda comum.</p>
         </div>
       </details>
       <details>
@@ -366,6 +465,30 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p>Você pode entrar com o prêmio até <strong>20% acima ou abaixo</strong> do preço de entrada postado no grupo. Os 20% acima são o <strong>limite máximo</strong>: não pague mais do que isso.</p>
           <p><strong>Exemplo:</strong> se a entrada foi postada a R$ 1,00, a faixa vai de R$ 0,80 a R$ 1,20.</p>
           <p>Use sempre uma <strong>ordem limitada</strong> com o preço dentro dessa faixa. Se, quando você chegar, o prêmio já estiver acima do limite, não corra atrás do preço: deixe a ordem no topo da faixa (no exemplo, R$ 1,20) e acompanhe: o preço costuma corrigir ao longo do dia ou nos dias seguintes. Veja mais em <a href="#nao-consegui-entrar">Não consegui entrar no preço indicado</a>.</p>
+          <p>Se o preço saiu da faixa e não voltou, deixe passar: vão existir outras operações. E lembre que <strong>seu resultado pode ser diferente do resultado do trader</strong>, porque seus preços de entrada e de saída não serão exatamente os mesmos.</p>
+        </div>
+      </details>
+      <details id="pagar-caro">
+        <summary>Como não pagar caro numa opção?</summary>
+        <div class="answer">
+          <ul>
+            <li><strong>Respeite a faixa de 20%:</strong> não pague mais de 20% acima do preço de entrada do trader.</li>
+            <li><strong>Use ordem limitada:</strong> defina o preço máximo que aceita pagar.</li>
+            <li><strong>Olhe o spread:</strong> é a distância entre o melhor preço de compra e o de venda. Com spread largo, você já começa perdendo.</li>
+            <li><strong>Cuidado com eventos:</strong> antes de balanço ou eleição, todo mundo quer opção e o preço infla. Depois do evento ele desaba, mesmo se você acertou a direção.</li>
+          </ul>
+          <p><strong>A armadilha do "pozinho":</strong> opção muito fora do dinheiro parece barata, mas barato não é o mesmo que provável. E, nesses preços, poucos centavos fazem enorme diferença. Caso real enviado por um assinante:</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th></th><th>Trader</th><th>Assinante</th></tr></thead>
+              <tbody>
+                <tr><td>Entrada</td><td>R$ 0,04</td><td>R$ 0,11</td></tr>
+                <tr><td>Saída</td><td>R$ 0,13</td><td>R$ 0,13</td></tr>
+                <tr><td>Resultado</td><td>+225%</td><td>+18%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Pela faixa de 20%, o limite de entrada era <strong>R$ 0,048</strong>. E se a operação virasse, quem pagou R$ 0,11 perderia quase três vezes mais.</p>
         </div>
       </details>
       <details id="nao-consegui-entrar">
@@ -376,7 +499,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
             <li><strong>Respeite a faixa de 20%.</strong> O trade continua valendo enquanto a opção estiver até 20% acima ou abaixo do preço de entrada que postamos. Exemplo: entrada a R$ 1,00, você pode entrar de R$ 0,80 a R$ 1,20. A partir de agora, as operações já são enviadas com o <strong>preço máximo</strong> de entrada.</li>
             <li><strong>Use ordem limitada.</strong> Não compre a mercado na hora do aviso. Coloque uma ordem limitada no preço que deseja pagar, dentro da faixa, e aguarde a execução. Se ainda não sabe como fazer, veja o <a href="#passo-a-passo">passo a passo no app</a> ou <a href="#contato">fale com os monitores</a>.</li>
             <li><strong>Acompanhe pela plataforma.</strong> Em <a href="https://app.tradingfloors.com.br/" target="_blank" rel="noopener"><strong>Operações em aberto</strong></a>, você vê ao longo do dia quanto cada opção está variando em relação à entrada. Se ela estiver dentro da faixa de 20%, ainda dá para entrar, mesmo que a operação tenha sido enviada há alguns dias. Veja <a href="#plataforma">como acessar</a>.</li>
-            <li><strong>Tenha paciência.</strong> O pregão vai das 10h às 17h, então você tem o dia todo para operar. Já houve opção com entrada a R$ 2,15 negociada a R$ 1,59 no mesmo dia, e outra com entrada a R$ 1,51 que, dois dias depois, estava a R$ 1,00. Quem acompanha costuma conseguir preços iguais ou até melhores que os nossos.</li>
+            <li><strong>Tenha paciência.</strong> O pregão dura o dia todo (veja os <a href="#horarios">horários</a>), então você tem tempo para operar. Já houve opção com entrada a R$ 2,15 negociada a R$ 1,59 no mesmo dia, e outra com entrada a R$ 1,51 que, dois dias depois, estava a R$ 1,00. Quem acompanha costuma conseguir preços iguais ou até melhores que os nossos.</li>
             <li><strong>Nem todo dia vai dar, e tudo bem.</strong> Se o mercado subir direto, sem correção, pode não haver chance de entrar dentro da faixa naquele dia. Continue acompanhando, porque o mercado pode corrigir nos dias seguintes.</li>
           </ol>
           <p>Ficou com dúvida? Os monitores <a href="#contato">Arthur Godoy e Pedro Cultrera</a> estão à disposição durante o pregão. 💬</p>
@@ -396,7 +519,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
       <details>
         <summary>Posso comprar e vender a mesma opção várias vezes no mesmo dia?</summary>
         <div class="answer">
-          <p>Pode, não há limite. Mas, quando a compra e a venda acontecem no mesmo dia, a operação é um <strong>day trade</strong>, que tem regras de imposto diferentes (veja <a href="#imposto">Imposto de Renda</a>). Além disso, cada entrada e saída tem custo de corretagem e emolumentos (veja <a href="#custos">quanto custa operar</a>).</p>
+          <p>Pode, não há limite. Mas, quando a compra e a venda acontecem no mesmo dia, a operação é um <strong>day trade</strong>, que paga <strong>20% de IR</strong> sobre o lucro, com <strong>1% retido na fonte</strong> (veja <a href="#imposto">Imposto de Renda</a>). Além disso, cada entrada e saída tem custo de corretagem e emolumentos (veja <a href="#custos">quanto custa operar</a>).</p>
         </div>
       </details>
       <details id="custos">
@@ -461,10 +584,19 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
         <div class="answer">
           <ul class="checklist">
             <li>Tenha saldo disponível na conta Genial.</li>
-            <li>As ordens só são executadas com o mercado aberto: de segunda a sexta, das 10h às 17h, somente em dias úteis.</li>
+            <li>As ordens só são executadas com o mercado aberto, em dias úteis (veja os <a href="#horarios">horários do pregão</a>).</li>
             <li>Anote do grupo três informações: ticker da opção, preço de entrada e quantidade.</li>
             <li>Entre com preço até 20% acima ou abaixo do preço de entrada postado no grupo. Nunca pague mais de 20% acima: esse é o limite máximo.</li>
             <li>O preço mostrado é por opção. O valor total é preço × quantidade, e as opções são negociadas em lotes de 100.</li>
+          </ul>
+          <p><strong>Antes de clicar em "comprar", pergunte-se:</strong></p>
+          <ul class="checklist">
+            <li>Qual é o vencimento?</li>
+            <li>Quanto do preço é só tempo?</li>
+            <li>A opção tem liquidez? O spread está razoável?</li>
+            <li>Estou dentro da faixa de 20%?</li>
+            <li>O valor respeita 0,5% a 1% da minha carteira?</li>
+            <li><strong>Aceito perder tudo o que estou pagando?</strong></li>
           </ul>
         </div>
       </details>
@@ -479,6 +611,11 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p>A letra do meio diz o tipo e o mês: de <strong>A a L</strong> são calls, de <strong>M a X</strong> são puts, de janeiro a dezembro. No exemplo, <span class="mono">K</span> é uma call com vencimento em novembro.</p>
           <div class="months" id="months"></div>
           <p class="note"><strong>Atenção:</strong> a busca traz códigos parecidos, como <span class="mono">BBASK22</span>, <span class="mono">BBASK302</span> e <span class="mono">BBASK309</span>. Cada um é uma opção diferente, com outro strike. Selecione somente o código <strong>exatamente igual</strong> ao da operação.</p>
+          <ul>
+            <li>O código da opção não é o da ação: busque na plataforma pelo código completo.</li>
+            <li>O número nem sempre é o strike exato, porque há ajustes por dividendos. Confira o strike na tela.</li>
+            <li>Opções semanais têm um sufixo extra no código, como <span class="mono">W1</span>, <span class="mono">W2</span>…</li>
+          </ul>
         </div>
       </details>
     </div>
@@ -518,7 +655,8 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
               </tbody>
             </table>
           </div>
-          <p>O valor retido na fonte pode ser descontado do imposto a pagar.</p>
+          <p>O valor retido na fonte (o "dedo-duro") pode ser descontado do imposto a pagar. A DARF usa o <strong>código 6015</strong>.</p>
+          <p>Para calcular e emitir a DARF, você pode usar a <strong>calculadora My Capital</strong>, nossa parceira, que se conecta com a sua conta na Genial, ou falar com um contador.</p>
           <p class="note"><strong>Atenção:</strong> a isenção para vendas de até R$ 20 mil por mês vale só para ações no mercado à vista. Ela <strong>não</strong> se aplica a opções: qualquer lucro com opções é tributado.</p>
         </div>
       </details>
@@ -531,11 +669,18 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
         </div>
       </details>
     </div>
+    <p class="hint">Regras vigentes em outubro de 2026. Não é orientação tributária individual.</p>
   </section>
 
   <section id="mercado" data-section>
     <h2>Outras dúvidas sobre o mercado</h2>
     <div class="qa">
+      <details>
+        <summary>O Desafio acaba depois da eleição?</summary>
+        <div class="answer">
+          <p>Não: ele segue pelos <strong>próximos 12 meses</strong>. O mercado continua cheio de eventos depois do segundo turno, como a nomeação de ministros e as eleições de meio de mandato nos EUA (midterms).</p>
+        </div>
+      </details>
       <details>
         <summary>Como funciona "comprar o índice" da bolsa?</summary>
         <div class="answer">
