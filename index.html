@@ -546,6 +546,25 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p>No segundo caso, a ação subiu e mesmo assim a operação deu prejuízo. Valores no vencimento, sem custos e impostos.</p>
         </div>
       </details>
+      <details>
+        <summary>Qual a diferença entre comprar uma put e vender uma call?</summary>
+        <div class="answer">
+          <p>As duas ganham quando a ação não sobe, mas o risco é oposto:</p>
+          <ul>
+            <li><strong>Comprar uma put:</strong> você paga o prêmio e ganha o direito de vender a ação pelo strike. Ganha se a ação <strong>cair</strong>, e a perda máxima é o prêmio pago.</li>
+            <li><strong>Vender uma call (lançar):</strong> você recebe o prêmio e assume a <strong>obrigação</strong> de vender a ação pelo strike, se a opção for exercida. O ganho máximo é o prêmio recebido. Se a ação disparar, a perda pode ser muito maior que esse prêmio, e a corretora exige garantia.</li>
+          </ul>
+          <p>No Desafio, só <strong>compramos</strong> calls e puts. Vender opção não faz parte das regras.</p>
+        </div>
+      </details>
+      <details>
+        <summary>O que é volatilidade implícita?</summary>
+        <div class="answer">
+          <p>É a expectativa do mercado de quanto a ação vai oscilar até o vencimento, e ela já vem embutida no prêmio. Quanto maior a volatilidade implícita, <strong>mais cara</strong> fica a opção, mesmo com a ação parada.</p>
+          <p>Ela costuma subir antes de eventos, como balanço ou eleição, e cair logo depois. Por isso uma opção pode perder valor mesmo quando você acerta a direção (veja <a href="#pagar-caro">como não pagar caro numa opção</a>).</p>
+          <p>Para saber se ela está alta, compare com o histórico da própria opção: algumas plataformas de análise de opções mostram a volatilidade implícita e o histórico dela. No Desafio, essa avaliação já faz parte da escolha do trader. O seu cuidado é respeitar a <a href="#faixa">faixa de 20%</a>.</p>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -581,6 +600,30 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
         <div class="answer">
           <p>Não. Para <strong>comprar</strong> uma call ou uma put, você só precisa ter saldo para pagar o prêmio. Não é preciso ter a ação na carteira: você negocia o direito, não a ação.</p>
           <p class="note"><strong>Atenção:</strong> se levar a opção até o vencimento, a história muda. Veja <a href="#vencimento">o que acontece no vencimento</a>.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Como o trader escolhe o strike? Por que às vezes é 3%, 5% ou 8% OTM?</summary>
+        <div class="answer">
+          <p>Depende do método de cada trader e do movimento que ele espera para a ação: tamanho, prazo e preço da opção.</p>
+          <ul>
+            <li><strong>Mais perto do preço atual (3% OTM):</strong> a opção é mais cara, mas precisa de um movimento menor para ganhar valor.</li>
+            <li><strong>Mais longe (8% OTM):</strong> a opção é mais barata e tem mais alavancagem, mas precisa de um movimento maior e tem mais chance de virar pó.</li>
+          </ul>
+          <p>Você não precisa escolher o strike: use <strong>exatamente o código postado</strong> no grupo.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Como saber o momento certo de entrar? Quando uma opção está "atrativa"?</summary>
+        <div class="answer">
+          <p>No Desafio, quem decide o momento de entrada é o trader, cada um pelo seu método: Sérgio Sanita pela análise gráfica, Artur Horta por notícias e fundamentos e Rafael Ferri por fundamentos e macroeconomia. Você não precisa ler o gráfico para decidir.</p>
+          <p>Para você, a entrada está boa quando:</p>
+          <ul>
+            <li>o preço está <strong>dentro da <a href="#faixa">faixa de 20%</a></strong> sobre o preço postado;</li>
+            <li>a opção tem negócios no dia e o spread está razoável;</li>
+            <li>o valor respeita <a href="#quanto-colocar">o quanto você definiu por operação</a>.</li>
+          </ul>
+          <p>Antes de clicar em "comprar", passe pelo <a href="#antes-de-comecar">checklist do passo a passo</a>.</p>
         </div>
       </details>
       <details id="faixa">
@@ -667,6 +710,26 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
         </div>
       </details>
       <details>
+        <summary>Comprei uma call com strike de R$ 30 por R$ 28. Se no vencimento a ação estiver mais cara, perco tudo ou posso esperar o próximo vencimento?</summary>
+        <div class="answer">
+          <p>Primeiro, um ajuste: o <strong>strike</strong> é o preço combinado no contrato, e o <strong>prêmio</strong> é o que você paga pela opção. O prêmio costuma ser bem menor que o strike, de centavos a poucos reais.</p>
+          <ul>
+            <li><strong>Cada opção tem uma única data de vencimento.</strong> Não dá para esperar o próximo: depois dessa data ela deixa de existir. Uma opção de outro mês é outra opção, com outro código.</li>
+            <li><strong>Se a ação estiver acima do strike</strong>, a call vale alguma coisa e pode ser exercida, e aí você compra as ações pelo strike.</li>
+            <li><strong>Se a ação estiver abaixo do strike</strong>, a call vence valendo zero.</li>
+          </ul>
+          <p>Por isso, a recomendação é <strong>vender antes do vencimento</strong>. Veja <a href="#vencimento">o que acontece no vencimento</a>.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Onde vejo minhas posições, quanto paguei e quanto estou ganhando?</summary>
+        <div class="answer">
+          <p>Essas informações ficam no <strong>aplicativo da corretora onde você executa as operações</strong>. Lá aparecem a quantidade de cada opção, o preço que você pagou, o valor atual e o resultado.</p>
+          <p>Como cada um opera pela própria conta, nós não temos acesso às suas posições e não conseguimos informar esses números diretamente. Mas podemos ajudar a interpretar: envie um <strong>print da tela</strong> para um dos <a href="#contato">monitores</a>, que eles explicam o que cada informação significa.</p>
+          <p>Para comparar a operação com a entrada do trader, use <a href="#plataforma">Operações em aberto</a>.</p>
+        </div>
+      </details>
+      <details>
         <summary>Posso comprar e vender a mesma opção várias vezes no mesmo dia?</summary>
         <div class="answer">
           <p>Pode, não há limite. Mas, quando a compra e a venda acontecem no mesmo dia, a operação é um <strong>day trade</strong>, que paga <strong>20% de IR</strong> sobre o lucro, com <strong>1% retido na fonte</strong> (veja <a href="#imposto">Imposto de Renda</a>). Além disso, cada entrada e saída tem custo de corretagem e emolumentos (veja <a href="#custos">quanto custa operar</a>).</p>
@@ -682,7 +745,7 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
     </div>
 
     <div class="qa">
-      <details>
+      <details id="antes-de-comecar">
         <summary>Antes de começar</summary>
         <div class="answer">
           <ul class="checklist">
@@ -852,6 +915,13 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
             <li><strong>Mini-índice (WIN):</strong> contrato futuro que acompanha o Ibovespa, muito usado para day trade. Exige margem de garantia e tem alto risco, porque ganhos e perdas são ajustados todos os dias.</li>
             <li><strong>Fundos de investimento</strong> que acompanham o índice.</li>
           </ul>
+        </div>
+      </details>
+      <details>
+        <summary>Onde acompanho o preço das ações em tempo real?</summary>
+        <div class="answer">
+          <p>No app da sua corretora: na Genial, pela tela de <strong>Cotações</strong> do Genial HB ou pelo Bolsa Fácil. Ali o preço é em tempo real e você também vê o livro de ofertas das opções.</p>
+          <p>Sites e apps gratuitos de cotação costumam mostrar o preço com <strong>atraso de cerca de 15 minutos</strong>. Não use esses sites para decidir o preço da sua ordem.</p>
         </div>
       </details>
     </div>
