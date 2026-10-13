@@ -649,6 +649,22 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p>Ficou com dúvida? Os monitores <a href="#contato">Arthur Godoy e Pedro Cultrera</a> estão à disposição durante o pregão. 💬</p>
         </div>
       </details>
+      <details id="fomo">
+        <summary>Vi a opção subindo e fiquei com medo de ficar de fora. Compro a qualquer preço?</summary>
+        <div class="answer">
+          <p>Não. Esse impulso tem nome: <strong>FOMO</strong>, do inglês <em>fear of missing out</em>, o medo de ficar de fora. É um dos jeitos mais comuns de transformar uma boa operação numa operação ruim.</p>
+          <p>Quando uma operação é postada, mais de mil pessoas tentam comprar a mesma opção ao mesmo tempo, e o preço dispara nos primeiros minutos. Quem compra a mercado nessa hora paga o pico. Foi o que aconteceu no <a href="#pagar-caro">caso do "pozinho"</a>: o trader entrou a R$ 0,04 e quem pagou R$ 0,11 fez +18% onde ele fez +225%. Se a operação virasse, essa pessoa perderia quase três vezes mais.</p>
+          <p>Para não cair no FOMO:</p>
+          <ul>
+            <li><strong>Não compre a mercado.</strong> Use <a href="#ordem-limitada">ordem limitada</a>, com o preço dentro da <a href="#faixa">faixa de 20%</a>.</li>
+            <li><strong>Não suba o limite</strong> para "garantir" a entrada. Acima da faixa, deixe passar.</li>
+            <li><strong>Não aumente a mão</strong> para compensar uma operação que você perdeu.</li>
+            <li><strong>Tenha paciência.</strong> O preço costuma corrigir ao longo do dia ou nos dias seguintes.</li>
+            <li><strong>Lembre que vão existir outras operações:</strong> são pelo menos três por semana, uma de cada trader.</li>
+          </ul>
+          <p class="note">Ficar de fora de uma operação custa menos do que pagar caro por ela.</p>
+        </div>
+      </details>
       <details id="pagar-caro">
         <summary>Como não pagar caro numa opção?</summary>
         <div class="answer">
@@ -672,12 +688,27 @@ footer { margin-top: 48px; font-size: 0.82rem; color: var(--muted); }
           <p>Pela faixa de 20%, o limite de entrada era <strong>R$ 0,048</strong>. E se a operação virasse, quem pagou R$ 0,11 perderia quase três vezes mais.</p>
         </div>
       </details>
-      <details>
+      <details id="ordem-limitada">
         <summary>Como fazer uma ordem limitada?</summary>
         <div class="answer">
-          <p>Na <strong>ordem limitada</strong>, você define o preço máximo que aceita pagar na compra, ou o mínimo que aceita receber na venda. A ordem só é executada nesse preço ou em um melhor. Em opções, ela é a mais indicada, porque evita pagar caro num momento de pouca liquidez.</p>
+          <p>Na <strong>ordem limitada</strong>, você define o preço máximo que aceita pagar na compra, ou o mínimo que aceita receber na venda. A ordem só é executada nesse preço ou num preço melhor.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th></th><th>Ordem a mercado</th><th>Ordem limitada</th></tr></thead>
+              <tbody>
+                <tr><td>Preço</td><td>Você aceita o que estiver disponível</td><td>Você define o máximo (ou o mínimo, na venda)</td></tr>
+                <tr><td>Execução</td><td>Na hora</td><td>Só se o mercado chegar ao seu preço</td></tr>
+                <tr><td>Risco em opções</td><td>Com spread largo, pode pagar bem acima do esperado</td><td>Pode não executar</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Em opções, use sempre a <strong>limitada</strong>. A liquidez é menor e o preço pula, então uma ordem a mercado pode sair muito longe do preço postado.</p>
           <p>Os campos da ordem são, em geral: <strong>ativo</strong> (o código da opção), <strong>tipo</strong> (limitada), <strong>quantidade</strong> (em lotes de 100), <strong>preço</strong> e <strong>validade</strong>.</p>
-          <p>Se o preço do mercado não chegar ao seu limite, a ordem fica aberta esperando. Isso não é um erro: significa que o mercado ainda não negociou no preço que você definiu. Veja como preencher cada campo no <a href="#passo-a-passo">passo a passo no app</a>.</p>
+          <ul>
+            <li><strong>Se a ordem não executar</strong>, ela fica aberta esperando. Isso não é erro: o mercado ainda não negociou no seu preço.</li>
+            <li><strong>Validade "Hoje":</strong> a ordem é cancelada no fim do pregão. Se ainda quiser entrar, envie de novo no dia seguinte, conferindo se o preço segue dentro da <a href="#faixa">faixa</a>.</li>
+          </ul>
+          <p>Veja como preencher cada campo no <a href="#passo-a-passo">passo a passo no app</a>.</p>
         </div>
       </details>
       <details>
